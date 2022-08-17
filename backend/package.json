@@ -1,0 +1,19 @@
+{
+  "name": "rest-express",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "studio": "prisma studio",
+    "migrate:init": "prisma migrate dev --name init"
+  },
+  "dependencies": {
+    "@prisma/client": "4.2.1",
+    "express": "4.18.1",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "prisma": "4.2.1"
+  }
+}

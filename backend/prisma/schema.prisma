@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+
+model Country {
+  id    Int     @id @default(autoincrement())
+  countryName String  @unique
+  callingCode  String?
+  capital String?
+  population Int?
+  currency String?
+  flag String?
+}
+
+model ExchangeRates {
+  id    Int     @id @default(autoincrement())
+  date String  @unique
+  base String?
+  rateUSD  String?
+  rateAUD String?
+  rateGBP String?
+  rateBRL String?
+  rateCNY String?
+}
