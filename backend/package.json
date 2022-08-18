@@ -1,19 +1,25 @@
 {
-  "name": "rest-express",
-  "version": "1.0.0",
-  "license": "MIT",
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "studio": "prisma studio",
-    "migrate:init": "prisma migrate dev --name init"
-  },
-  "dependencies": {
-    "@prisma/client": "4.2.1",
-    "express": "4.18.1",
-    "nodemon": "^2.0.19"
-  },
-  "devDependencies": {
-    "prisma": "4.2.1"
-  }
+    "name": "rest-express",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js",
+        "studio": "prisma studio",
+        "fetch:currency": "node src/getCurrency.js",
+        "migrate:init": "prisma migrate dev --name init",
+        "migrate:dev": "prisma migrate dev",
+        "seed": "node src/seed.js"
+    },
+    "dependencies": {
+        "@prisma/client": "4.2.1",
+        "dotenv": "^16.0.1",
+        "express": "4.18.1",
+        "node-fetch": "^3.2.10",
+        "nodemon": "^2.0.19"
+    },
+    "devDependencies": {
+        "prisma": "4.2.1"
+    },
+    "type": "module"
 }
