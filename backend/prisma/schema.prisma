@@ -3,12 +3,12 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 model Country {
-  id    Int     @id @default(autoincrement())
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
   countryName String  @unique
   callingCode  String?
   capital String?

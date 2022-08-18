@@ -9,6 +9,7 @@
         "fetch:currency": "node src/getCurrency.js",
         "migrate:init": "prisma migrate dev --name init",
         "migrate:dev": "prisma migrate dev",
+        "generate": "prisma generate",
         "seed": "node src/seed.js"
     },
     "dependencies": {
