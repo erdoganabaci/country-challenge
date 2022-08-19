@@ -11,6 +11,17 @@ app.get("/countries", async (req, res) => {
     res.json(countries);
 });
 
+app.get("/country/:id/", async (req, res) => {
+    const { id } = req.params;
+    const country = await prisma.country.findUnique({
+        where: {
+            id
+        }
+    });
+
+    res.json(country);
+});
+
 const server = app.listen(3000, () =>
     console.log(`
 🚀 Server ready at: http://localhost:3000
