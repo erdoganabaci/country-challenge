@@ -2,6 +2,8 @@ import express from "express";
 import { PrismaClient } from "@prisma/client";
 import cors from "cors";
 
+const PORT = process.env.PORT || 3001;
+
 const prisma = new PrismaClient();
 const app = express();
 
@@ -24,8 +26,8 @@ app.get("/country/:id/", async (req, res) => {
     res.json(country);
 });
 
-const server = app.listen(3001, () =>
+const server = app.listen(PORT, () =>
     console.log(`
-🚀 Server ready at: http://localhost:3001
+🚀 Server ready at: http://localhost:${PORT}
 ⭐️ See sample requests: http://pris.ly/e/ts/rest-express#3-using-the-rest-api`)
 );
