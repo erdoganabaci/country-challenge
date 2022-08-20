@@ -9,6 +9,7 @@ import MDBox from "components/MDBox";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import SimpleBlogCard from "examples/Cards/BlogCards/SimpleBlogCard";
 import MDButton from "components/MDButton";
+import Footer from "examples/Footer";
 
 const API_URL = `${process.env.REACT_APP_DEPLOYMENT_BASE_URL}/countries`;
 function Dashboard() {
@@ -69,6 +70,7 @@ function Dashboard() {
           </Grid>
         </MDBox>
       </MDBox>
+      <Footer />
     </DashboardLayout>
   );
 }
