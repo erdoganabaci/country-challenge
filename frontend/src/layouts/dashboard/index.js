@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import * as XLSX from "xlsx";
 // @mui material components
 import Grid from "@mui/material/Grid";
 // Material Dashboard 2 React components
@@ -10,7 +11,6 @@ import SimpleBlogCard from "examples/Cards/BlogCards/SimpleBlogCard";
 import MDButton from "components/MDButton";
 
 const API_URL = `${process.env.REACT_APP_BASE_URL}/countries`;
-
 function Dashboard() {
   const [countryData, setCountryData] = useState(null);
 
@@ -19,6 +19,14 @@ function Dashboard() {
       .then((response) => response.json())
       .then((data) => setCountryData(data));
   }, []);
+
+  const onExport = () => {
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.json_to_sheet(countryData);
+    XLSX.utils.book_append_sheet(wb, ws, "CountrySheet1");
+    XLSX.writeFile(wb, "CountryReport.xlsx");
+  };
+
   return (
     <DashboardLayout>
       <a href="/dashboard" style={{ color: "white" }}>
@@ -28,7 +36,9 @@ function Dashboard() {
         <Grid item xs={12} md={5} />
         <Grid item xs={12} md={5} />
         <Grid item xs={12} md={2}>
-          <MDButton color="info">Generate Report</MDButton>
+          <MDButton onClick={onExport} color="info">
+            Generate Report
+          </MDButton>
         </Grid>
       </Grid>
       <MDBox py={3}>
