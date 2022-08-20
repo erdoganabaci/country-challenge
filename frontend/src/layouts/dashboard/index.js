@@ -10,7 +10,7 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import SimpleBlogCard from "examples/Cards/BlogCards/SimpleBlogCard";
 import MDButton from "components/MDButton";
 
-const API_URL = `${process.env.REACT_APP_BASE_URL}/countries`;
+const API_URL = `${process.env.REACT_APP_DEPLOYMENT_BASE_URL}/countries`;
 function Dashboard() {
   const [countryData, setCountryData] = useState(null);
 

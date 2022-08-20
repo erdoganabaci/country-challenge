@@ -8,7 +8,7 @@ import MDTypography from "components/MDTypography";
 import { useMaterialUIController } from "context";
 
 function Detail() {
-  const API_URL = `${process.env.REACT_APP_BASE_URL}/country/`;
+  const API_URL = `${process.env.REACT_APP_DEPLOYMENT_BASE_URL}/country/`;
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
