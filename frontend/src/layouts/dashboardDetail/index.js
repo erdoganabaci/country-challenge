@@ -6,8 +6,7 @@ import MDBox from "components/MDBox";
 
 // Material Dashboard 2 React examples
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import BillingInformation from "layouts/billing/components/BillingInformation";
-import Transactions from "layouts/billing/components/Transactions";
+import Detail from "layouts/dashboardDetail/detailComponent/";
 
 import Breadcrumbs from "examples/Breadcrumbs";
 
@@ -18,12 +17,11 @@ function DashboardDetail() {
       <MDBox mt={8}>
         <MDBox mb={3}>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={7}>
-              <BillingInformation />
+            <Grid item xs={12} md={3} />
+            <Grid item xs={12} md={6}>
+              <Detail />
             </Grid>
-            <Grid item xs={12} md={5}>
-              <Transactions />
-            </Grid>
+            <Grid item xs={12} md={2} />
           </Grid>
         </MDBox>
       </MDBox>

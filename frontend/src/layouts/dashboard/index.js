@@ -17,8 +17,13 @@ function Dashboard() {
     <DashboardLayout>
       {/* <DashboardNavbar /> */}
       <h1>Welcome to dashboard</h1>
-      <MDButton color="info">Generate Report</MDButton>
-
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={5} />
+        <Grid item xs={12} md={5} />
+        <Grid item xs={12} md={2}>
+          <MDButton color="info">Generate Report</MDButton>
+        </Grid>
+      </Grid>
       <MDBox py={3}>
         <MDBox mt={4.5}>
           <Grid container spacing={3}>
