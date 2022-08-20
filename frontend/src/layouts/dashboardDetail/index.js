@@ -13,7 +13,11 @@ import Breadcrumbs from "examples/Breadcrumbs";
 function DashboardDetail() {
   return (
     <DashboardLayout>
-      <Breadcrumbs icon="home" title="Detail" route={["dashboards", "detail"]} />
+      <Breadcrumbs
+        icon="home"
+        title="Detail Country Information"
+        route={["dashboards", "detail"]}
+      />
       <MDBox mt={8}>
         <MDBox mb={3}>
           <Grid container spacing={3}>

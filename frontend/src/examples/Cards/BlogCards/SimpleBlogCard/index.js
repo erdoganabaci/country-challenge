@@ -16,9 +16,6 @@ Coded by www.creative-tim.com
 // react-router components
 import { Link } from "react-router-dom";
 
-// prop-types is a library for typechecking of props
-import PropTypes from "prop-types";
-
 // @mui material components
 import Card from "@mui/material/Card";
 
@@ -27,7 +24,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
-function SimpleBlogCard({ image, title, description, action }) {
+function SimpleBlogCard({ image, title, population, capital, action }) {
   return (
     <Card>
       <MDBox position="relative" borderRadius="lg" mt={-3} mx={2}>
@@ -62,10 +59,29 @@ function SimpleBlogCard({ image, title, description, action }) {
         <MDTypography display="inline" variant="h3" textTransform="capitalize" fontWeight="bold">
           {title}
         </MDTypography>
-        <MDBox mt={2} mb={3}>
-          <MDTypography variant="body2" component="p" color="text">
-            {description}
-          </MDTypography>
+        <MDBox mt={2} mb={3} display="flex" flexDirection="column">
+          <MDBox mb={1} lineHeight={0}>
+            <MDBox mb={1} lineHeight={0}>
+              <MDTypography variant="body2" color="text">
+                Population:&nbsp;&nbsp;&nbsp;
+                <MDTypography variant="button" fontWeight="medium">
+                  {population}
+                </MDTypography>
+              </MDTypography>
+            </MDBox>
+
+            <MDTypography variant="body2" color="text">
+              Capital:&nbsp;&nbsp;&nbsp;
+              <MDTypography variant="button" fontWeight="medium" textTransform="capitalize">
+                {capital}
+              </MDTypography>
+            </MDTypography>
+            <MDTypography variant="body2" color="text">
+              <MDTypography variant="button" fontWeight="medium" textTransform="capitalize">
+                ...
+              </MDTypography>
+            </MDTypography>
+          </MDBox>
         </MDBox>
         {action && (
           <Link to={action.route}>
@@ -76,28 +92,5 @@ function SimpleBlogCard({ image, title, description, action }) {
     </Card>
   );
 }
-
-// Typechecking props for the SimpleBlogCard
-SimpleBlogCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  action: PropTypes.shape({
-    type: PropTypes.oneOf(["external", "internal"]).isRequired,
-    route: PropTypes.string.isRequired,
-    color: PropTypes.oneOf([
-      "primary",
-      "secondary",
-      "info",
-      "success",
-      "warning",
-      "error",
-      "dark",
-      "light",
-      "default",
-    ]),
-    label: PropTypes.string.isRequired,
-  }),
-};
 
 export default SimpleBlogCard;

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 // @mui material components
 import Grid from "@mui/material/Grid";
 // Material Dashboard 2 React components
@@ -5,18 +6,24 @@ import MDBox from "components/MDBox";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-// import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-
 import SimpleBlogCard from "examples/Cards/BlogCards/SimpleBlogCard";
 import MDButton from "components/MDButton";
 
-const testDataArr = [1, 2, 3, 4, 5, 6];
+const API_URL = `${process.env.REACT_APP_BASE_URL}/countries`;
 
 function Dashboard() {
+  const [countryData, setCountryData] = useState(null);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((data) => setCountryData(data));
+  }, []);
   return (
     <DashboardLayout>
-      {/* <DashboardNavbar /> */}
-      <h1>Welcome to dashboard</h1>
+      <a href="/dashboard" style={{ color: "white" }}>
+        <h2>Country Information</h2>
+      </a>
       <Grid container spacing={3}>
         <Grid item xs={12} md={5} />
         <Grid item xs={12} md={5} />
@@ -27,23 +34,28 @@ function Dashboard() {
       <MDBox py={3}>
         <MDBox mt={4.5}>
           <Grid container spacing={3}>
-            {testDataArr.map((arr, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index}>
-                <MDBox mb={3}>
-                  <SimpleBlogCard
-                    image="https://bit.ly/3Hlw1MQ"
-                    title="Card title"
-                    description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis non dolore est fuga nobis ipsum illum eligendi nemo iure repellat, soluta, optio minus ut reiciendis voluptates enim impedit veritatis officiis."
-                    action={{
-                      type: "internal",
-                      route: `/dashboardDetail/${index}`,
-                      color: "info",
-                      label: "More Information",
-                    }}
-                  />
-                </MDBox>
-              </Grid>
-            ))}
+            {countryData ? (
+              countryData.map((country) => (
+                <Grid item xs={12} md={6} lg={4} key={country.id}>
+                  <MDBox mb={3}>
+                    <SimpleBlogCard
+                      image={country.flag}
+                      title={country.countryName}
+                      population={country.population}
+                      capital={country.capital}
+                      action={{
+                        type: "internal",
+                        route: `/dashboardDetail/${country.id}`,
+                        color: "info",
+                        label: "More Information",
+                      }}
+                    />
+                  </MDBox>
+                </Grid>
+              ))
+            ) : (
+              <h1>Loading</h1>
+            )}
           </Grid>
         </MDBox>
       </MDBox>
