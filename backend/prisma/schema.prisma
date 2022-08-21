@@ -14,6 +14,7 @@ model Country {
   capital String?
   population String?
   currency String?
+  currencyShortName String?
   flag String?
   avarageCurrency String?
 }

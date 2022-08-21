@@ -45,10 +45,10 @@ const seedCountries = countries.map((country) => {
     const capital = country[0].capital[0];
     // add commas as thousands separators
     const population = country[0].population.toLocaleString();
-    const currencyType = Object.keys(country[0].currencies)[0];
-    const currency = country[0].currencies[currencyType].name;
+    const currencyShortName = Object.keys(country[0].currencies)[0];
+    const currency = country[0].currencies[currencyShortName].name;
     const flag = country[0].flags.png;
-    const avarageCurrency = getAverageOfCurrency(currencyType);
+    const avarageCurrency = getAverageOfCurrency(currencyShortName);
     if (countryName === "United States") {
         callingCode = "+1";
     }
@@ -58,11 +58,13 @@ const seedCountries = countries.map((country) => {
         capital,
         population,
         currency,
+        currencyShortName,
         flag,
         avarageCurrency
     };
     return seedCountry;
 });
+
 async function main() {
     console.log(`Start seeding ...`);
     for (const seedCountry of seedCountries) {
