@@ -12,6 +12,19 @@ import MDButton from "components/MDButton";
 import Footer from "examples/Footer";
 
 const API_URL = `${process.env.REACT_APP_DEPLOYMENT_BASE_URL}/countries`;
+const excelHeading = [
+  [
+    "id",
+    "Country Name",
+    "Calling Code",
+    "Capital City",
+    "Population",
+    "Currency",
+    "Currency Short Name",
+    "Flag",
+    "30 Day Average of EUR/Currency",
+  ],
+];
 function Dashboard() {
   const [countryData, setCountryData] = useState(null);
 
@@ -23,8 +36,12 @@ function Dashboard() {
 
   const onExport = () => {
     const wb = XLSX.utils.book_new();
-    const ws = XLSX.utils.json_to_sheet(countryData);
+    const ws = XLSX.utils.json_to_sheet([]);
+    XLSX.utils.sheet_add_aoa(ws, excelHeading);
+    XLSX.utils.sheet_add_json(ws, countryData, { origin: "A2", skipHeader: true });
+
     XLSX.utils.book_append_sheet(wb, ws, "CountrySheet1");
+
     XLSX.writeFile(wb, "CountryReport.xlsx");
   };
 

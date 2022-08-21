@@ -95,7 +95,7 @@ function Detail() {
                     </MDBox>
                     <MDBox mb={1} lineHeight={0}>
                       <MDTypography variant="body2" color="text">
-                        30 Day Average of currency(Base Eur):&nbsp;&nbsp;&nbsp;
+                        30 day Average of EUR/{country.currencyShortName}:&nbsp;&nbsp;&nbsp;
                         <MDTypography variant="button" fontWeight="medium">
                           {country.avarageCurrency}
                         </MDTypography>
