@@ -7,6 +7,12 @@ import MDTypography from "components/MDTypography";
 
 import { useMaterialUIController } from "context";
 
+const capitalize = (str) =>
+  str
+    .split(" ")
+    .map((sub) => sub.charAt(0).toUpperCase() + sub.slice(1))
+    .join(" ");
+
 function Detail() {
   const API_URL = `${process.env.REACT_APP_DEPLOYMENT_BASE_URL}/country/`;
   const [controller] = useMaterialUIController();
@@ -89,7 +95,7 @@ function Detail() {
                       <MDTypography variant="body2" color="text">
                         Currency:&nbsp;&nbsp;&nbsp;
                         <MDTypography variant="button" fontWeight="medium">
-                          {country.currency}
+                          {capitalize(country.currency)}
                         </MDTypography>
                       </MDTypography>
                     </MDBox>
