@@ -16,5 +16,5 @@ model Country {
   currency String?
   currencyShortName String?
   flag String?
-  avarageCurrency String?
+  averageCurrency String?
 }

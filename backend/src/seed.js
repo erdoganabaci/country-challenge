@@ -48,7 +48,7 @@ const seedCountries = countries.map((country) => {
     const currencyShortName = Object.keys(country[0].currencies)[0];
     const currency = country[0].currencies[currencyShortName].name;
     const flag = country[0].flags.png;
-    const avarageCurrency = getAverageOfCurrency(currencyShortName);
+    const averageCurrency = getAverageOfCurrency(currencyShortName);
     if (countryName === "United States") {
         callingCode = "+1";
     }
@@ -60,7 +60,7 @@ const seedCountries = countries.map((country) => {
         currency,
         currencyShortName,
         flag,
-        avarageCurrency
+        averageCurrency
     };
     return seedCountry;
 });

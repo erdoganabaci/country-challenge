@@ -97,7 +97,7 @@ function Detail() {
                       <MDTypography variant="body2" color="text">
                         30 day Average of EUR/{country.currencyShortName}:&nbsp;&nbsp;&nbsp;
                         <MDTypography variant="button" fontWeight="medium">
-                          {country.avarageCurrency}
+                          {country.averageCurrency}
                         </MDTypography>
                       </MDTypography>
                     </MDBox>
