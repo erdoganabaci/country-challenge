@@ -11,16 +11,12 @@ You can test get request countries below in code snippet.
 https://sentigrate-country-backend.herokuapp.com/countries
 
 <img src="../images/api.png" alt="countries backend image" width="400"/>
-<br/>
-<br/>
 
 ### Get Detail of Country
 
 https://sentigrate-country-backend.herokuapp.com/country/6301f645acad09ecc738418b
 
 <img src="../images/single-country.png" alt="country detail backend image" width="400"/>
-<br/>
-<br/>
 
 ## Run locally
 
