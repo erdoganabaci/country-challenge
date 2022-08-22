@@ -1,15 +1,52 @@
-# REST Countries and Currencies API Challange
+# Country Backend
 
-This project created for technical test.
+This application demonstrates that request several apis and save database by seed.
 
-## Install Project
+You can test get request countries below in code snippet.
 
-```bash
-npm install
+[Demo](https://sentigrate-country-backend.herokuapp.com/countries)
+
+<p>Get All Countries</p>
+```url
+https://sentigrate-country-backend.herokuapp.com/countries
+```
+<img src="../images/api.png" alt="countries backend image" width="400"/>
+<br/>
+<br/>
+<p>Get Detail of Country</p>
+
+```url
+https://sentigrate-country-backend.herokuapp.com/country/6301f645acad09ecc738418b
 ```
 
-## Run Project
+<img src="../images/single-country.png" alt="country detail backend image" width="400"/>
+<br/>
+<br/>
 
-```bash
+## Run locally
+
+```shell
+npm install
 npm run start
+```
+
+## .env file
+
+```shell
+API_KEY = { FIXER_API_KEY }
+DATABASE_URL = { MONGO_DB_URL }
+```
+
+## Important!
+
+**Dont forget to add cluster db name on your mongoDB url.Location is before the `?retryWrites`**
+
+## Developed Npm and Node Version
+
+```
+node -v
+v16.15.0
+
+npm -v
+8.5.5
 ```
