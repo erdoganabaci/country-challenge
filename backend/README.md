@@ -6,18 +6,17 @@ You can test get request countries below in code snippet.
 
 [Demo](https://sentigrate-country-backend.herokuapp.com/countries)
 
-<p>Get All Countries</p>
-```url
+### Get All Countries
+
 https://sentigrate-country-backend.herokuapp.com/countries
-```
+
 <img src="../images/api.png" alt="countries backend image" width="400"/>
 <br/>
 <br/>
-<p>Get Detail of Country</p>
 
-```url
+### Get Detail of Country
+
 https://sentigrate-country-backend.herokuapp.com/country/6301f645acad09ecc738418b
-```
 
 <img src="../images/single-country.png" alt="country detail backend image" width="400"/>
 <br/>
