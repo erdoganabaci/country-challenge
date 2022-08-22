@@ -24,7 +24,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
-function SimpleBlogCard({ image, title, population, capital, action }) {
+function SimpleBlogCard({ image, title, population, capital, action, dataTestId }) {
   return (
     <Card>
       <MDBox position="relative" borderRadius="lg" mt={-3} mx={2}>
@@ -85,7 +85,9 @@ function SimpleBlogCard({ image, title, population, capital, action }) {
         </MDBox>
         {action && (
           <Link to={action.route}>
-            <MDButton color={action.color ? action.color : "dark"}>{action.label}</MDButton>
+            <MDButton dataTestId={dataTestId} color={action.color ? action.color : "dark"}>
+              {action.label}
+            </MDButton>
           </Link>
         )}
       </MDBox>

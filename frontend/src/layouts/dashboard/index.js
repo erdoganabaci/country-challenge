@@ -63,10 +63,11 @@ function Dashboard() {
         <MDBox mt={4.5}>
           <Grid container spacing={3}>
             {countryData ? (
-              countryData.map((country) => (
+              countryData.map((country, index) => (
                 <Grid item xs={12} md={6} lg={4} key={country.id}>
                   <MDBox mb={3}>
                     <SimpleBlogCard
+                      dataTestId={`country-button-${index}`}
                       image={country.flag}
                       title={country.countryName}
                       population={country.population}

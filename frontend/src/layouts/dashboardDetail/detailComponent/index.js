@@ -53,7 +53,12 @@ function Detail() {
                   mb={2}
                 >
                   <MDBox width="100%" display="flex" flexDirection="column">
-                    <MDTypography variant="h3" fontWeight="medium" textTransform="capitalize">
+                    <MDTypography
+                      variant="h3"
+                      fontWeight="medium"
+                      textTransform="capitalize"
+                      dataTestId="country-name"
+                    >
                       {country.countryName}
                     </MDTypography>
 

@@ -28,6 +28,7 @@
     "@testing-library/user-event": "13.5.0",
     "chart.js": "3.4.1",
     "chroma-js": "2.4.2",
+    "cypress": "^10.6.0",
     "prop-types": "15.8.1",
     "react": "17.0.2",
     "react-chartjs-2": "3.0.4",
@@ -45,7 +46,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cypress open",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
   },
