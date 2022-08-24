@@ -22,6 +22,11 @@ The goal of this test is to retrieve data from several restful web services, sto
 
 ![CountryInformation](images/countryDashboard.png)
 
+### Example Report
+![CountryArchitecture](images/countryReport.png)
+
+### Architecture/Design
+![CountryArchitecture](images/sentigrateArc.png)
 
 ### Getting Started
 1. Clone this repo
